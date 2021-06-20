@@ -1,0 +1,24 @@
+<div class="student_listing">
+    <!-- <table mat-table [dataSource]="studentList" class="mat-elevation-z8">
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: actualColumns;"></tr>
+    </table> -->
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">NAME</th>
+                <th scope="col">CLASS</th>
+                <th scope="col">BATCH</th>
+                <th scope="col">CONTACT</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let record of studentList">
+                <td><a routerLink="{{record._id}}">{{record.name}}</a></td>
+                <td>{{record.class}}</td>
+                <td>{{record.batch}}</td>
+                <td>{{record.guardians[0].contact}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
