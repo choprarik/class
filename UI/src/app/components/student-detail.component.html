@@ -21,11 +21,11 @@
     </div>
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">
-            <h2 class="accordion-header" id="guardianDetails">
+            <div class="accordion-header" id="guardianDetails">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 Guardian Details
               </button>
-            </h2>
+            </div>
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
                 <div class="accordion-body">
                     <ul class="list-group list-group">
@@ -43,11 +43,11 @@
         </div>
 
         <div class="accordion-item">
-            <h2 class="accordion-header" id="payment">
+            <div class="accordion-header" id="payment">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 Payment
               </button>
-            </h2>
+            </div>
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
                 <div class="accordion-body">
                     <button (click)="initializeNewPayment()" type="button" class="primary">Pay</button>
@@ -56,24 +56,34 @@
                           <label for="paymentAmount" class="col-form-label">Amount</label>
                         </div>
                         <div class="col-auto">
-                            <input type="text" id="paymentAmount" class="form-control" aria-describedby="passwordHelpInline" [(ngModel)]="newPayment.amount">
+                            <input type="text" id="paymentAmount" class="form-control" [(ngModel)]="newPayment.amount">
                         </div>
                         <div class="col-auto">
-                            <span id="passwordHelpInline" class="form-text">
-                            per {{student.fees.payment_mode}}
-                            </span>
-                        </div>
+                            <label for="paidBy" class="col-form-label">Paid By</label>
+                          </div>
+                          <div class="col-auto">
+                              <input type="text" id="paidBy" class="form-control" [(ngModel)]="newPayment.paid_by">
+                          </div>
+                          <div class="col-auto">
+                            <label for="paidTo" class="col-form-label">Paid To</label>
+                          </div>
+                          <div class="col-auto">
+                              <input type="text" id="paidTo" class="form-control" [(ngModel)]="newPayment.paid_to">
+                          </div>
+                          <div class="col-auto">
+                              <button type="button" class="btn btn-primary" (click)="makePayment()">Pay</button>
+                          </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="accordion-item">
-          <h2 class="accordion-header" id="paymentHistory">
+          <div class="accordion-header" id="paymentHistory">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
               Payment History
             </button>
-          </h2>
+        </div>
           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
             <div class="accordion-body">
                 <table class="table table-striped table-hover">
